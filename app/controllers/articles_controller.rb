@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
-  
+ 
 
-  
+   http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show] 
 
   def new 
     @article = Article.new
@@ -57,6 +57,7 @@ def update
 private
   def allow_params
     params.require(:article).permit(:title, :text)
+
   end
 #methods defined below a private method will become private  
 
