@@ -8,7 +8,11 @@ class ArticlesController < ApplicationController
   end
 
    def index
-   @articles = Article.all
+   @search = Article.search do
+    fulltext params[:search]
+    
+  end
+  @articles = @search.results
   end
 
   def create
@@ -56,7 +60,7 @@ def update
   
 private
   def allow_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text,:tag_list)
 
   end
 #methods defined below a private method will become private  

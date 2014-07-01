@@ -20,6 +20,7 @@ Blog::Application.routes.draw do
   resources :articles do
     resources :comments
   end
+  resources :tags
 
   # Sample resource route with options:
   #   resources :products do

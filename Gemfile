@@ -27,6 +27,9 @@ gem 'strong_parameters'
 gem 'devise'
 
 gem 'cancan'
+gem 'sunspot_rails'
+gem 'progress_bar'
+gem 'sunspot_solr'
 
 gem 'omniauth'
 gem 'omniauth-google-oauth2' 

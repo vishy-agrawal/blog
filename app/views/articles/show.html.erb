@@ -1,12 +1,22 @@
-<p>
+<div class="article"><p>
   <strong>Title:</strong>
   <%= @article.title %>
 </p>
- 
+
+ <p>
+  <strong>Tags:</strong>
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+
+<div class="articleText">
 <p>
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
+</div>
+</div>
 
 <h2>Comments</h2>
 <%= render @article.comments %>
@@ -14,5 +24,5 @@
 <h2>Add a comment:</h2>
 <%= render "comments/form"  %>
 
-<%=link_to 'Back', articles_path%>
+<%=link_to 'All Articles', articles_path%>
 <%=link_to 'Edit', edit_article_path(@article)%>

@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Tags</th>
+    <th>Articles</th>
+  </tr>
+ 
+  <% @tags.each do |tag| %>
+    <tr>
+      <td><%= tag.name %></td>
+      % tag.articles.each do |article| %>
+    <%= link_to article.title, article_path(artilce) %><br>
+  <% end %>
+  <% end %>
+</table>
